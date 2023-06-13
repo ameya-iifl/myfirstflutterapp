@@ -16,6 +16,7 @@ import 'package:myfirstflutterapp/pages/ListViewExample.dart';
 
 import 'Assignment/SmithShoes.dart';
 import 'Assignment/VirtualSignature.dart';
+import 'Assignment/VirtualSignature2.dart';
 
 
 // void main() async{
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: VirtualSignature(),
+    home: VirtualSignature2(),
     );
   }
 }

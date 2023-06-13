@@ -305,7 +305,7 @@ class _VirtualSignatureState extends State<VirtualSignature> {
                               )
                             ],
                           ),
-                          SvgPicture.asset('images_vs/right-banner.svg')
+                          SvgPicture.asset('images_vs/right-banner.svg', color: Colors.red,)
                         ],
                       ),
                     ],
@@ -317,7 +317,7 @@ class _VirtualSignatureState extends State<VirtualSignature> {
             Container(
               width: double.infinity,
               color: Colors.indigo[900],
-              child: Column(
+              child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
