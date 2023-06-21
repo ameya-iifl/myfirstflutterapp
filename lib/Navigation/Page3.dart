@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Page3 extends StatelessWidget {
   const Page3({Key? key}) : super(key: key);
@@ -10,7 +11,8 @@ class Page3 extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: (){
-            Navigator.pop(context);
+            // Navigator.pop(context);
+            Get.back();
           },
           child: Text('Navigate'),
         ),

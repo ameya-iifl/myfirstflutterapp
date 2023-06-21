@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:myfirstflutterapp/Navigation/Page3.dart';
 
 class Page2 extends StatelessWidget {
@@ -12,7 +13,8 @@ class Page2 extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>Page3()));
+            // Navigator.push(context, MaterialPageRoute(builder: (context)=>Page3()));
+            Get.to(Page3());
           },
           child: Text('Navigate'),
         ),
