@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
 
 class VSDesktop extends StatefulWidget {
-
-   VSDesktop({Key? key}) : super(key: key);
+  VSDesktop({Key? key}) : super(key: key);
 
   @override
   State<VSDesktop> createState() => _VSDesktopState();
 }
 
 class _VSDesktopState extends State<VSDesktop> {
-
   var isChecked = false;
-
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.indigo[900],
@@ -109,7 +105,8 @@ class _VSDesktopState extends State<VSDesktop> {
                                   alignment: AlignmentDirectional.centerStart,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsets.only(left: 75.0),
+                                      padding:
+                                          const EdgeInsets.only(left: 75.0),
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(20),
                                         child: Container(
@@ -122,6 +119,8 @@ class _VSDesktopState extends State<VSDesktop> {
                                                 top: 20,
                                                 bottom: 20),
                                             child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
                                               children: [
                                                 Text(
                                                   "Please read the application cum agreement form carefully.",
@@ -144,6 +143,8 @@ class _VSDesktopState extends State<VSDesktop> {
                                                   height: 10,
                                                 ),
                                                 Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
                                                   children: [
                                                     Icon(Icons.picture_as_pdf),
                                                     InkWell(
@@ -163,18 +164,28 @@ class _VSDesktopState extends State<VSDesktop> {
                                       ),
                                     ),
                                     Container(
-                                      height: 200,
-                                      width: 200,
-                                      decoration: BoxDecoration(shape: BoxShape.circle,),
-                                      child: Image.asset('images_vs/step1.png'),
+                                      height: 147,
+                                      width: 147,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(147),
+                                          child: Image.asset(
+                                              'images_vs/step1.png')),
                                     )
                                   ],
+                                ),
+                                SizedBox(
+                                  height: 20,
                                 ),
                                 Stack(
                                   alignment: AlignmentDirectional.centerStart,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsets.only(left: 75.0),
+                                      padding:
+                                          const EdgeInsets.only(left: 75.0),
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(20),
                                         child: Container(
@@ -200,26 +211,27 @@ class _VSDesktopState extends State<VSDesktop> {
                                                 ),
                                                 Row(
                                                   children: [
-                                               isChecked?InkWell(
-                                                 onTap:(){
-                                                   setState(() {
-                                                     isChecked = false;
-
-                                                   });
-                                                 },
-                                                 child: Icon(Icons
-                                                          .check_box_outlined),
-                                               ):InkWell(
-                                                 onTap:(){
-                                                   setState(() {
-                                                     isChecked = true;
-
-                                                   });
-
-                                                 },
-                                                 child: Icon(Icons
-                                                     .check_box_outline_blank_outlined),
-                                               ),
+                                                    isChecked
+                                                        ? InkWell(
+                                                            onTap: () {
+                                                              setState(() {
+                                                                isChecked =
+                                                                    false;
+                                                              });
+                                                            },
+                                                            child: Icon(Icons
+                                                                .check_box_outlined),
+                                                          )
+                                                        : InkWell(
+                                                            onTap: () {
+                                                              setState(() {
+                                                                isChecked =
+                                                                    true;
+                                                              });
+                                                            },
+                                                            child: Icon(Icons
+                                                                .check_box_outline_blank_outlined),
+                                                          ),
                                                     Text(
                                                       "I accept the details mentioned in the agreement and have understood the terms and conditions.",
                                                       style: TextStyle(
@@ -241,9 +253,10 @@ class _VSDesktopState extends State<VSDesktop> {
                                                         fontWeight:
                                                             FontWeight.bold),
                                                   ),
-                                                  style: ElevatedButton.styleFrom(
-                                                      backgroundColor:
-                                                          Colors.orange),
+                                                  style:
+                                                      ElevatedButton.styleFrom(
+                                                          backgroundColor:
+                                                              Colors.orange),
                                                 )
                                               ],
                                             ),
@@ -252,17 +265,28 @@ class _VSDesktopState extends State<VSDesktop> {
                                       ),
                                     ),
                                     Container(
-                                        height: 200,
-                                        width: 200,
-                                        decoration: BoxDecoration(shape: BoxShape.circle,),
-                                        child: Image.asset('images_vs/step2.png'))
+                                      height: 147,
+                                      width: 147,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(147),
+                                          child: Image.asset(
+                                              'images_vs/step2.png')),
+                                    )
                                   ],
+                                ),
+                                SizedBox(
+                                  height: 20,
                                 ),
                                 Stack(
                                   alignment: AlignmentDirectional.centerStart,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsets.only(left: 75.0),
+                                      padding:
+                                          const EdgeInsets.only(left: 75.0),
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(20),
                                         child: Container(
@@ -290,11 +314,18 @@ class _VSDesktopState extends State<VSDesktop> {
                                                   children: [
                                                     Row(
                                                       children: [
-                                                        // TextField(),
+                                                        Container(
+                                                            color: Colors.white,
+                                                            height: 25,
+                                                            width: 150,
+                                                            child: TextField()),
+                                                        SizedBox(
+                                                          width: 10,
+                                                        ),
                                                         ElevatedButton(
                                                           onPressed: () {},
-                                                          child:
-                                                              Text("Submit OTP"),
+                                                          child: Text(
+                                                              "Submit OTP"),
                                                           style: ElevatedButton
                                                               .styleFrom(
                                                                   backgroundColor:
@@ -302,6 +333,9 @@ class _VSDesktopState extends State<VSDesktop> {
                                                                           .orange),
                                                         ),
                                                       ],
+                                                    ),
+                                                    SizedBox(
+                                                      height: 10,
                                                     ),
                                                     Row(
                                                       children: [
@@ -332,16 +366,28 @@ class _VSDesktopState extends State<VSDesktop> {
                                       ),
                                     ),
                                     Container(
-                                        height: 200,
-                                        width: 200,
-                                        decoration: BoxDecoration(shape: BoxShape.circle,),
-                                        child: Image.asset('images_vs/step3.png'))
+                                      height: 147,
+                                      width: 147,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(147),
+                                          child: Image.asset(
+                                              'images_vs/step3.png')),
+                                    )
                                   ],
                                 )
                               ],
                             ),
                           ),
-                          Image.asset('images_vs/right-banner.png',)
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Image.asset(
+                            'images_vs/right-banner.png',
+                          )
                         ],
                       ),
                     ],

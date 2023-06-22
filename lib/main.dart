@@ -3,7 +3,11 @@ import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:myfirstflutterapp/Assignment/DiceExample.dart';
+import 'package:myfirstflutterapp/GetxPackage/CountController.dart';
+import 'package:myfirstflutterapp/GetxPackage/CounterBinding.dart';
+import 'package:myfirstflutterapp/GetxPackage/Counter_app.dart';
 import 'package:myfirstflutterapp/GetxPackage/GetxExample.dart';
+import 'package:myfirstflutterapp/GetxPackage/GetxResponsiveExample.dart';
 import 'package:myfirstflutterapp/Navigation/Page1.dart';
 import 'package:myfirstflutterapp/PageTransition/Screen1.dart';
 import 'package:myfirstflutterapp/Assignment/ColouryExample.dart';
@@ -19,6 +23,7 @@ import 'package:myfirstflutterapp/pages/ListViewExample.dart';
 import 'Assignment/SmithShoes.dart';
 import 'Assignment/VirtualSignature.dart';
 import 'Assignment/VirtualSignature2.dart';
+import 'VirtualSignatureWebPage/VSDesktop.dart';
 
 
 // void main() async{
@@ -28,6 +33,8 @@ import 'Assignment/VirtualSignature2.dart';
 // }
 
 void main(){
+  // Get.lazyPut(()=>CountController());
+  CountBinding().dependencies();
   runApp(MyApp());
 }
 
@@ -36,9 +43,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
     debugShowCheckedModeBanner: false,
-    home: CityPage(),
+    initialRoute: '/',
+    initialBinding: CountBinding(),
+    home: CounterApp(),
     );
   }
 }
