@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class VSDesktop extends StatefulWidget {
-  VSDesktop({Key? key}) : super(key: key);
+  final String name;
+  VSDesktop({Key? key, required String this.name}) : super(key: key);
+
 
   @override
   State<VSDesktop> createState() => _VSDesktopState();
@@ -9,6 +11,7 @@ class VSDesktop extends StatefulWidget {
 
 class _VSDesktopState extends State<VSDesktop> {
   var isChecked = false;
+
 
   @override
   Widget build(BuildContext context) {

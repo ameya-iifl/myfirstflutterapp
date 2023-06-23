@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
@@ -24,6 +26,9 @@ import 'Assignment/SmithShoes.dart';
 import 'Assignment/VirtualSignature.dart';
 import 'Assignment/VirtualSignature2.dart';
 import 'VirtualSignatureWebPage/VSDesktop.dart';
+import 'VirtualSignatureWebPage/VSResponsive.dart';
+import 'VirtualSignatureWebPage/VSTablet.dart';
+import 'VirtualSignatureWebPage/VSMobile.dart';
 
 
 // void main() async{
@@ -32,9 +37,31 @@ import 'VirtualSignatureWebPage/VSDesktop.dart';
 //   runApp(MyApp());
 // }
 
+
+// Main function for Getx Counter App
+// void main(){
+//   // Get.lazyPut(()=>CountController());
+//   CountBinding().dependencies();
+//   runApp(MyApp());
+// }
+//
+// class MyApp extends StatelessWidget {
+//   const MyApp({Key? key}) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     String name = Uri.base.queryParameters['name'] ?? 'null';
+//     print(name);
+//     return GetMaterialApp(
+//     debugShowCheckedModeBanner: false,
+//     initialRoute: '/',
+//     initialBinding: CountBinding(),
+//     home: CounterApp(),
+//     );
+//   }
+// }
+
 void main(){
-  // Get.lazyPut(()=>CountController());
-  CountBinding().dependencies();
   runApp(MyApp());
 }
 
@@ -43,11 +70,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    String name = Uri.base.queryParameters['name'] ?? "null";
+
     return GetMaterialApp(
-    debugShowCheckedModeBanner: false,
-    initialRoute: '/',
-    initialBinding: CountBinding(),
-    home: CounterApp(),
+      debugShowCheckedModeBanner: false,
+      home: VSDesktop(name: name,),
     );
   }
 }
