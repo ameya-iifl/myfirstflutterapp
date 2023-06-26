@@ -64,8 +64,5 @@ void main() {
   String prospectNo = Uri.base.queryParameters['prospectNo'] ?? "null";
   runApp(GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: VSResponsivePage(
-        name: name,
-        prospectNo : prospectNo
-      )));
+      home: VSResponsivePage(name: name, prospectNo: prospectNo)));
 }

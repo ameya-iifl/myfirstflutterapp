@@ -197,12 +197,14 @@ class _VSTabletState extends State<VSTablet> {
                                           bottom: 20),
                                       child: Column(
                                         children: [
-                                          Text(
-                                            "Please confirm if you have read, and accept the offer.",
-                                            style: TextStyle(
-                                                fontSize: 20,
-                                                fontWeight:
-                                                    FontWeight.bold),
+                                          Flexible(
+                                            child: Text(
+                                              "Please confirm if you have read, and accept the offer.",
+                                              style: TextStyle(
+                                                  fontSize: 20,
+                                                  fontWeight:
+                                                      FontWeight.bold),
+                                            ),
                                           ),
                                           SizedBox(
                                             height: 10,
@@ -230,31 +232,35 @@ class _VSTabletState extends State<VSTablet> {
                                                       child: Icon(Icons
                                                           .check_box_outline_blank_outlined),
                                                     ),
-                                              Text(
-                                                "I accept the details mentioned in the agreement and have understood the terms and conditions.",
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.bold),
+                                              Flexible(
+                                                child: Text(
+                                                  "I accept the details mentioned in the agreement and have understood the terms and conditions.",
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
                                               ),
                                             ],
                                           ),
                                           SizedBox(
                                             height: 10,
                                           ),
-                                          ElevatedButton(
-                                            onPressed: () {},
-                                            child: Text(
-                                              'Generate OTP for Virtual Signature',
-                                              style: TextStyle(
-                                                  fontSize: 20,
-                                                  color: Colors.white,
-                                                  fontWeight:
-                                                      FontWeight.bold),
+                                          Flexible(
+                                            child: ElevatedButton(
+                                              onPressed: () {},
+                                              child: Text(
+                                                'Generate OTP for Virtual Signature',
+                                                style: TextStyle(
+                                                    fontSize: 20,
+                                                    color: Colors.white,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                              style:
+                                                  ElevatedButton.styleFrom(
+                                                      backgroundColor:
+                                                          Colors.orange),
                                             ),
-                                            style:
-                                                ElevatedButton.styleFrom(
-                                                    backgroundColor:
-                                                        Colors.orange),
                                           )
                                         ],
                                       ),

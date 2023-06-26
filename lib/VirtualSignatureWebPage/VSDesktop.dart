@@ -1,4 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:myfirstflutterapp/VirtualSignatureWebPage/GetDocumentRepo.dart';
+import 'package:myfirstflutterapp/VirtualSignatureWebPage/GetDocumentRequestModel.dart';
 
 class VSDesktop extends StatefulWidget {
   final String name, prospectNo;
@@ -151,7 +155,11 @@ class _VSDesktopState extends State<VSDesktop> {
                                                   children: [
                                                     Icon(Icons.picture_as_pdf),
                                                     InkWell(
-                                                        onTap: () {},
+                                                        onTap: () async {
+                                                          var request = GetDocumentRequest.fromJson(jsonDecode("{\"ReferenceNumber\":\"GLTEST21\",\"IsConsentTaken\":\"Y\",\"UniqueIdentifier\":\"\"}"));
+                                                          var doc  = await GetDocumentRepo().getDocument(request);
+                                                          print(doc);
+                                                        },
                                                         child: Text(
                                                           'My Loan Details',
                                                           style: TextStyle(
