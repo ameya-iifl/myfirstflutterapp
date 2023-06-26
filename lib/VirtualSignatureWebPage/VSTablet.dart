@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class VSTablet extends StatefulWidget {
-  VSTablet({Key? key}) : super(key: key);
+  final String name, prospectNo;
+  VSTablet({Key? key, required this.name, required this.prospectNo}) : super(key: key);
 
   @override
   State<VSTablet> createState() => _VSTabletState();
@@ -33,7 +34,7 @@ class _VSTabletState extends State<VSTablet> {
                         height: 40,
                       ),
                       Text(
-                        "Hi Adv test!",
+                        "Hi ${widget.name}!",
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 30),
                       ),
@@ -67,7 +68,7 @@ class _VSTabletState extends State<VSTablet> {
                                     height: 8,
                                   ),
                                   Text(
-                                    "GLTEST130",
+                                    "${widget.prospectNo}",
                                     style: TextStyle(fontSize: 20),
                                   ),
                                 ],
@@ -83,7 +84,7 @@ class _VSTabletState extends State<VSTablet> {
                                     height: 8,
                                   ),
                                   Text(
-                                    "Adv test",
+                                    "${widget.name}",
                                     style: TextStyle(fontSize: 20),
                                   ),
                                 ],

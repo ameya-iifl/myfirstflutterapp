@@ -30,13 +30,11 @@ import 'VirtualSignatureWebPage/VSResponsive.dart';
 import 'VirtualSignatureWebPage/VSTablet.dart';
 import 'VirtualSignatureWebPage/VSMobile.dart';
 
-
 // void main() async{
 //   await Hive.initFlutter();
 //   await Hive.openBox('MyBox');
 //   runApp(MyApp());
 // }
-
 
 // Main function for Getx Counter App
 // void main(){
@@ -61,21 +59,13 @@ import 'VirtualSignatureWebPage/VSMobile.dart';
 //   }
 // }
 
-void main(){
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-
-    String name = Uri.base.queryParameters['name'] ?? "null";
-
-    return GetMaterialApp(
+void main() {
+  String name = Uri.base.queryParameters['name'] ?? "null";
+  String prospectNo = Uri.base.queryParameters['prospectNo'] ?? "null";
+  runApp(GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: VSDesktop(name: name,),
-    );
-  }
+      home: VSResponsivePage(
+        name: name,
+        prospectNo : prospectNo
+      )));
 }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class VSMobile extends StatefulWidget {
-  VSMobile({Key? key}) : super(key: key);
+  final String name, prospectNo;
+  VSMobile({Key? key, required this.name, required this.prospectNo}) : super(key: key);
 
   @override
   State<VSMobile> createState() => _VSMobileState();
@@ -30,7 +31,7 @@ class _VSMobileState extends State<VSMobile> {
                         height: 40,
                       ),
                       Text(
-                        "Hi Adv test!",
+                        "Hi ${widget.name}!",
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 30),
                       ),
@@ -64,7 +65,7 @@ class _VSMobileState extends State<VSMobile> {
                                     height: 8,
                                   ),
                                   Text(
-                                    "GLTEST130",
+                                    "${widget.prospectNo}",
                                     style: TextStyle(fontSize: 20),
                                   ),
                                 ],
@@ -80,7 +81,7 @@ class _VSMobileState extends State<VSMobile> {
                                     height: 8,
                                   ),
                                   Text(
-                                    "Adv test",
+                                    "${widget.name}",
                                     style: TextStyle(fontSize: 20),
                                   ),
                                 ],

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class VSDesktop extends StatefulWidget {
-  final String name;
-  VSDesktop({Key? key, required String this.name}) : super(key: key);
+  final String name, prospectNo;
+  VSDesktop({Key? key, required this.name, required this.prospectNo}) : super(key: key);
 
 
   @override
@@ -36,7 +36,7 @@ class _VSDesktopState extends State<VSDesktop> {
                         height: 40,
                       ),
                       Text(
-                        "Hi Adv test!",
+                        "Hi ${widget.name}!",
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 30),
                       ),
@@ -70,7 +70,7 @@ class _VSDesktopState extends State<VSDesktop> {
                                     height: 8,
                                   ),
                                   Text(
-                                    "GLTEST130",
+                                    "${widget.prospectNo}",
                                     style: TextStyle(fontSize: 20),
                                   ),
                                 ],
@@ -86,7 +86,7 @@ class _VSDesktopState extends State<VSDesktop> {
                                     height: 8,
                                   ),
                                   Text(
-                                    "Adv test",
+                                    "${widget.name}",
                                     style: TextStyle(fontSize: 20),
                                   ),
                                 ],
