@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 class GetDocumentRequest {
   String? referenceNumber;
   String? isConsentTaken;
@@ -12,12 +14,12 @@ class GetDocumentRequest {
     uniqueIdentifier = json['UniqueIdentifier'];
   }
 
-  Map<String, dynamic> toJson() {
+  dynamic toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['ReferenceNumber'] = this.referenceNumber;
     data['IsConsentTaken'] = this.isConsentTaken;
     data['UniqueIdentifier'] = this.uniqueIdentifier;
-    return data;
+    return json.encode(data);
   }
 }
 

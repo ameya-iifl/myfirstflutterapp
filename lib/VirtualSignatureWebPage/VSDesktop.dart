@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:myfirstflutterapp/VirtualSignatureWebPage/CommonWidgets.dart';
 import 'package:myfirstflutterapp/VirtualSignatureWebPage/GetDocumentRepo.dart';
 import 'package:myfirstflutterapp/VirtualSignatureWebPage/GetDocumentRequestModel.dart';
 import 'package:myfirstflutterapp/VirtualSignatureWebPage/GetDocumentValidResponseModel.dart';
@@ -16,7 +17,6 @@ class VSDesktop extends StatefulWidget {
 
 class _VSDesktopState extends State<VSDesktop> {
   var isChecked = false;
-
 
   @override
   Widget build(BuildContext context) {
@@ -40,66 +40,15 @@ class _VSDesktopState extends State<VSDesktop> {
                       SizedBox(
                         height: 40,
                       ),
-                      Text(
-                        "Hi ${widget.name}!",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 30),
-                      ),
+                      TextHeading(widget.name, 30),
                       SizedBox(
                         height: 20,
                       ),
-                      Text(
-                          "We are pleased to offer you an Loan from IIFL Finance. The details of your loan offer are given below:",
-                          style:
-                              TextStyle(fontSize: 20, color: Colors.black54)),
+                      TextParagraph(20),
                       SizedBox(
                         height: 20,
                       ),
-                      Container(
-                        decoration: BoxDecoration(
-                            border: Border.all(color: Colors.grey),
-                            borderRadius: BorderRadius.circular(20)),
-                        child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Row(
-                            children: [
-                              Column(
-                                // mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Prospect ID",
-                                    style: TextStyle(
-                                        color: Colors.grey, fontSize: 15),
-                                  ),
-                                  SizedBox(
-                                    height: 8,
-                                  ),
-                                  Text(
-                                    "${widget.prospectNo}",
-                                    style: TextStyle(fontSize: 20),
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  Text(
-                                    "Customer Name",
-                                    style: TextStyle(
-                                        color: Colors.grey, fontSize: 15),
-                                  ),
-                                  SizedBox(
-                                    height: 8,
-                                  ),
-                                  Text(
-                                    "${widget.name}",
-                                    style: TextStyle(fontSize: 20),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                      ProspectIdAndNameDetailsContainer(widget.name, widget.prospectNo),
                       SizedBox(
                         height: 20,
                       ),
@@ -114,7 +63,7 @@ class _VSDesktopState extends State<VSDesktop> {
                                   children: [
                                     Padding(
                                       padding:
-                                          const EdgeInsets.only(left: 75.0),
+                                      const EdgeInsets.only(left: 75.0),
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(20),
                                         child: Container(
@@ -127,69 +76,24 @@ class _VSDesktopState extends State<VSDesktop> {
                                                 top: 20,
                                                 bottom: 20),
                                             child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
+                                              mainAxisAlignment: MainAxisAlignment.center,
                                               children: [
-                                                Text(
-                                                  "Please read the application cum agreement form carefully.",
-                                                  style: TextStyle(
-                                                      fontSize: 20,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                ),
+                                                TextApplication(20),
                                                 SizedBox(
                                                   height: 10,
                                                 ),
-                                                Text(
-                                                  "Kindly, Contact digitalsupport@iifl.com in case of discrepancy.",
-                                                  style: TextStyle(
-                                                      fontSize: 20,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                ),
+                                                TextContactEmail(20),
                                                 SizedBox(
                                                   height: 10,
                                                 ),
-                                                Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    Icon(Icons.picture_as_pdf),
-                                                    InkWell(
-                                                        onTap: () async {
-                                                          var request = GetDocumentRequest(referenceNumber: "GL8774266", isConsentTaken: "Y", uniqueIdentifier: "");
-                                                          var doc  = await GetDocumentRepo().getDocument(request);
-                                                          // if (doc.contains("Result")){
-                                                          //   GetDocumentValidResponse data = doc;
-                                                          //   GetDocumentRepo().downloadFileWeb(data.result.document, mimeType, ext)
-                                                          // }
-                                                        },
-                                                        child: Text(
-                                                          'My Loan Details',
-                                                          style: TextStyle(
-                                                              color: Colors
-                                                                  .blue[700]),
-                                                        ))
-                                                  ],
-                                                )
+                                                DownloadPDF(),
                                               ],
                                             ),
                                           ),
                                         ),
                                       ),
                                     ),
-                                    Container(
-                                      height: 147,
-                                      width: 147,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                      ),
-                                      child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(147),
-                                          child: Image.asset(
-                                              'images_vs/step1.png')),
-                                    )
+                                    StepNumberContainer(147, 1),
                                   ],
                                 ),
                                 SizedBox(
@@ -214,20 +118,13 @@ class _VSDesktopState extends State<VSDesktop> {
                                                 bottom: 20),
                                             child: Column(
                                               children: [
-                                                Text(
-                                                  "Please confirm if you have read, and accept the offer.",
-                                                  style: TextStyle(
-                                                      fontSize: 20,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                ),
+                                                TextConfirmIfYouRead(20),
                                                 SizedBox(
                                                   height: 10,
                                                 ),
                                                 Row(
                                                   children: [
-                                                    isChecked
-                                                        ? InkWell(
+                                                    isChecked ? InkWell(
                                                             onTap: () {
                                                               setState(() {
                                                                 isChecked =
@@ -236,8 +133,7 @@ class _VSDesktopState extends State<VSDesktop> {
                                                             },
                                                             child: Icon(Icons
                                                                 .check_box_outlined),
-                                                          )
-                                                        : InkWell(
+                                                          ): InkWell(
                                                             onTap: () {
                                                               setState(() {
                                                                 isChecked =
@@ -247,50 +143,21 @@ class _VSDesktopState extends State<VSDesktop> {
                                                             child: Icon(Icons
                                                                 .check_box_outline_blank_outlined),
                                                           ),
-                                                    Text(
-                                                      "I accept the details mentioned in the agreement and have understood the terms and conditions.",
-                                                      style: TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.bold),
-                                                    ),
+                                                    SizedBox(width: 5,),
+                                                    TextConfirmationToGenerateOTP(0),
                                                   ],
                                                 ),
                                                 SizedBox(
                                                   height: 10,
                                                 ),
-                                                ElevatedButton(
-                                                  onPressed: () {},
-                                                  child: Text(
-                                                    'Generate OTP for Virtual Signature',
-                                                    style: TextStyle(
-                                                        fontSize: 20,
-                                                        color: Colors.white,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ),
-                                                  style:
-                                                      ElevatedButton.styleFrom(
-                                                          backgroundColor:
-                                                              Colors.orange),
-                                                )
+                                                GenerateOTPElevatedButton(20)
                                               ],
                                             ),
                                           ),
                                         ),
                                       ),
                                     ),
-                                    Container(
-                                      height: 147,
-                                      width: 147,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                      ),
-                                      child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(147),
-                                          child: Image.asset(
-                                              'images_vs/step2.png')),
-                                    )
+                                    StepNumberContainer(147, 2)
                                   ],
                                 ),
                                 SizedBox(

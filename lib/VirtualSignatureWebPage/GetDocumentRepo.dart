@@ -12,13 +12,13 @@ class GetDocumentRepo {
   getDocument(GetDocumentRequest request) async{
     try{
       final res = await http.post(Uri.parse("https://apiuat.iifl.in//VirtualSignature/v2/GetDocument"), body: request.toJson(), headers: <String, String> {
-        "Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBsaWNhdGlvbk5hbWUiOiJHTExPUyIsIlJlcXVlc3RlZEJ5IjoiQzE0MzExNiIsIk9zTmFtZSI6IkFuZHJvaWQiLCJBcHBWZXJzaW9uIjoiMS4wIiwibmJmIjoxNjg3Nzc2MzMzLCJleHAiOjE2ODc3Nzc1MzMsImlhdCI6MTY4Nzc3NjMzMywiaXNzIjoiTG9jYWxIb3N0IiwiYXVkIjoiR0xMT1MuQzE0MzExNi5BbmRyb2lkIn0.ZEM2DZAnkSkmDJh2iORj1r4PwGqQTklXmZcwpKoKg30",
+        "Authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBcHBsaWNhdGlvbk5hbWUiOiJHTExPUyIsIlJlcXVlc3RlZEJ5IjoiQzE0MzExNiIsIk9zTmFtZSI6IkFuZHJvaWQiLCJBcHBWZXJzaW9uIjoiMS4wIiwibmJmIjoxNjg3ODU4MjgxLCJleHAiOjE2ODc4NTk0ODEsImlhdCI6MTY4Nzg1ODI4MSwiaXNzIjoiTG9jYWxIb3N0IiwiYXVkIjoiR0xMT1MuQzE0MzExNi5BbmRyb2lkIn0.jaQ99IPlsC668Uegwp1Ny0HswBJ0tDQBwewnyK-2rmM",
         "Ocp-Apim-Subscription-Key": "0dff5568454f4a4eb668e25a225a3452"
       });
 
       var resbody = res.body;
 
-      print(res.statusCode);
+      print(resbody);
 
       if(res.statusCode == 200 && resbody.contains("Result")){
         print("resbody");
@@ -30,7 +30,7 @@ class GetDocumentRepo {
       }
     }
     catch(ex){
-      print("catch");
+      print(ex);
       throw Exception(ex);
     }
   }
